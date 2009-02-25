@@ -20,7 +20,7 @@
  * copyright holders for GoGoEgo, only the GNU General Public License
  * grants you rights to modify or redistribute this code.
  */
-package com.solertium.util.gwt.charts;
+package com.solertium.util.gwt.charts.client;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -20,56 +20,46 @@
  * copyright holders for GoGoEgo, only the GNU General Public License
  * grants you rights to modify or redistribute this code.
  */
-package com.solertium.util.gwt.charts;
+package com.solertium.util.gwt.charts.client;
 
-import com.solertium.util.gwt.charts.fill.BackgroundFill;
+import com.solertium.util.gwt.charts.client.fill.BackgroundFill;
+
+
 
 /**
- * BarChart.java
+ * PieChart.java
  *
  * @author carl.scott
  *
  */
-public class BarChart extends AxisChart {
+public class PieChart extends BaseChart {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String ORIENTATION_HORIZONTAL = "h";
-	public static final String ORIENTATION_VERTICAL = "v";
-
-	public static final String DISPLAY_STACKED = "s";
-	public static final String DISPLAY_GROUPED = "g";
-
-	/**
-	 * Creates a bar chart with a vertical orientation
-	 * and grouped display.
-	 * @param chartType
-	 */
-	public BarChart() {
-		this(ORIENTATION_VERTICAL);
+	public PieChart() {
+		this(false);
 	}
 
-	public BarChart(String orientation) {
-		this(orientation, DISPLAY_GROUPED);
+	public PieChart(boolean is3d) {
+		super(is3d ? "p3" : "p");
 	}
 
-	public BarChart(String orientation, String display) {
-		super("b" + orientation + display);
+	public void setOrientation(int angleInRadians) {
+		put("chp", Integer.toString(angleInRadians));
 	}
 
-	public void setAutoFitBarWidth(boolean enable) {
-		if (enable)
-			put("chbh", "a");
-		else
-			remove("chbh");
+	public void setChartLabels(String... labels) {
+		final StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < labels.length; i++) {
+			builder.append(labels[i]);
+			if ((i+1) < labels.length)
+				builder.append('|');
+		}
+		put("chl", builder.toString());
 	}
 
 	public void setChartBackground(BackgroundFill fill) {
 		put("chf", fill.toString());
-	}
-
-	public void setZeroLine(double lineAsPercentage) {
-		put("chp", Double.toString(lineAsPercentage));
 	}
 
 }

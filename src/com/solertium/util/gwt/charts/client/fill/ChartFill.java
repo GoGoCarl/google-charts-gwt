@@ -20,41 +20,27 @@
  * copyright holders for GoGoEgo, only the GNU General Public License
  * grants you rights to modify or redistribute this code.
  */
-package com.solertium.util.gwt.charts.fill;
+package com.solertium.util.gwt.charts.client.fill;
+
+
 
 /**
- * ChartMargins.java
+ * ChartFill.java
  *
  * @author carl.scott
  *
  */
-public class ChartMargins {
+public class ChartFill extends BackgroundFill {
 
-	public final int top, left, bottom, right;
-	public int legendWidth, legendHeight;
+	private String chartFill;
 
-	public ChartMargins(int margins) {
-		this(margins, margins, margins, margins);
-	}
-
-	public ChartMargins(int top, int left, int bottom, int right) {
-		this.top = top;
-		this.left = left;
-		this.bottom = bottom;
-		this.right = right;
-		this.legendHeight = this.legendWidth = -1;
-	}
-
-	public void setLegendSize(int legendWidth, int legendHeight) {
-		this.legendWidth = legendWidth;
-		this.legendHeight = legendHeight;
+	public void setChartFill(String chartFill) {
+		this.chartFill = chartFill;
 	}
 
 	public String toString() {
-		String out = top + "," + left + "," + bottom + "," + right;
-		if (legendHeight >= 0 && legendWidth >= 0)
-			out += "|" + legendWidth + "," + legendHeight;
-		return out;
+		return super.toString() +
+			(chartFill == null ? "" : "c,s," + chartFill);
 	}
 
 }

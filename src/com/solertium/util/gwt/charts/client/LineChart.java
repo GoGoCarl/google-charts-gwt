@@ -20,44 +20,33 @@
  * copyright holders for GoGoEgo, only the GNU General Public License
  * grants you rights to modify or redistribute this code.
  */
-package com.solertium.util.gwt.charts;
+package com.solertium.util.gwt.charts.client;
 
-import com.solertium.util.gwt.charts.fill.BackgroundFill;
+import com.solertium.util.gwt.charts.client.fill.ChartFill;
 
 
 /**
- * PieChart.java
+ * LineChart.java
  *
  * @author carl.scott
  *
  */
-public class PieChart extends BaseChart {
+public class LineChart extends AxisChart {
+
+	public static final String PLOT_X_AXIS_WITH_LINES = "c";
+	public static final String PLOT_X_AXIS_WITHOUT_LINES = "s";
 
 	private static final long serialVersionUID = 1L;
 
-	public PieChart() {
-		this(false);
+	public LineChart() {
+		this(PLOT_X_AXIS_WITH_LINES);
 	}
 
-	public PieChart(boolean is3d) {
-		super(is3d ? "p3" : "p");
+	public LineChart(String plotType) {
+		super("l" + plotType);
 	}
 
-	public void setOrientation(int angleInRadians) {
-		put("chp", Integer.toString(angleInRadians));
-	}
-
-	public void setChartLabels(String... labels) {
-		final StringBuilder builder = new StringBuilder();
-		for (int i = 0; i < labels.length; i++) {
-			builder.append(labels[i]);
-			if ((i+1) < labels.length)
-				builder.append('|');
-		}
-		put("chl", builder.toString());
-	}
-
-	public void setChartBackground(BackgroundFill fill) {
+	public void setChartBackground(ChartFill fill) {
 		put("chf", fill.toString());
 	}
 

@@ -20,29 +20,23 @@
  * copyright holders for GoGoEgo, only the GNU General Public License
  * grants you rights to modify or redistribute this code.
  */
-package com.solertium.util.gwt.charts;
+package com.solertium.util.gwt.charts.client;
 
-import com.solertium.util.gwt.charts.fill.ChartFill;
+import com.solertium.util.gwt.charts.client.fill.ChartFill;
+
 
 /**
- * LineChart.java
+ * ScatterPlot.java
  *
  * @author carl.scott
  *
  */
-public class LineChart extends AxisChart {
-
-	public static final String PLOT_X_AXIS_WITH_LINES = "c";
-	public static final String PLOT_X_AXIS_WITHOUT_LINES = "s";
+public class ScatterPlot extends AxisChart {
 
 	private static final long serialVersionUID = 1L;
 
-	public LineChart() {
-		this(PLOT_X_AXIS_WITH_LINES);
-	}
-
-	public LineChart(String plotType) {
-		super("l" + plotType);
+	public ScatterPlot() {
+		super("s");
 	}
 
 	public void setChartBackground(ChartFill fill) {
