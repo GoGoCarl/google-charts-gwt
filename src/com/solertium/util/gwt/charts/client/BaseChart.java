@@ -116,8 +116,10 @@ public abstract class BaseChart extends HashMap<String, String> {
 	}
 
 	public String generate() {
-		if (chartData == null)
-			return "";
+		if (chartData == null) {
+			System.out.println("Please specify chart data.");
+			return null;
+		}
 
 		put("chd", chartData.getEncodedData());
 
