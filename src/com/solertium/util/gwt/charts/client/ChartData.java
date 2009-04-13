@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -30,9 +30,10 @@ import java.util.Iterator;
  * ChartData.java
  *
  * Specify data that is to be charted here.  Uses the encoding
- * method.
+ * method as specified in Google Chart documentation.
  *
- * @author carl.scott
+ * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+ *  href="http://www.solertium.com">Solertium Corporation</a>
  *
  */
 public class ChartData {
@@ -160,6 +161,15 @@ public class ChartData {
 		return chartData.join('');
 	}-*/;
 
+	/**
+	 * ChartDataExtras
+	 * 
+	 * Extra, optional information you can specify regard 
+	 * the chart data.
+	 * 
+	 * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+	 *  href="http://www.solertium.com">Solertium Corporation</a>
+	 */
 	public static class ChartDataExtras {
 
 		private String scaling;

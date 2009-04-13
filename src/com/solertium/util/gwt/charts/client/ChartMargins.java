@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -24,8 +24,11 @@ package com.solertium.util.gwt.charts.client;
 
 /**
  * ChartMargins.java
+ * 
+ * Specify margins for your chart.
  *
- * @author carl.scott
+ * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+ *  href="http://www.solertium.com">Solertium Corporation</a>
  *
  */
 public class ChartMargins {

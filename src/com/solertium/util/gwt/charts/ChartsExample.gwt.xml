@@ -1,0 +1,14 @@
+<!-- Google Charts for GWT Example -->
+<module>
+
+	<!-- Core Web Toolkit -->
+	<inherits name='com.google.gwt.user.User'/>
+	
+	<!-- Google Charts for GWT -->
+	<inherits name='com.solertium.util.gwt.charts.Charts' />
+	
+	<source path='example'/>
+	
+	<entry-point class='com.solertium.util.gwt.charts.example.ExampleEntryPoint' />
+
+</module>

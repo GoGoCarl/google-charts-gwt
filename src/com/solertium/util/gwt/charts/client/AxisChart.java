@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -27,15 +27,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
-
 /**
+ * 
  * AxisChart.java
- *
+ * 
  * Abstract class for all charts that have axes, and the
  * functionality that comes with them.
- *
- * @author carl.scott
- *
+ * 
+ * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+ *  href="http://www.solertium.com">Solertium Corporation</a>
  */
 public abstract class AxisChart extends BaseChart {
 
@@ -64,7 +64,7 @@ public abstract class AxisChart extends BaseChart {
 		put("chxt", getSeparatedList(axes, ','));
 	}
 
-	public void setAxisLabels(String axis, String[] labels) {
+	public void setAxisLabels(String axis, String... labels) {
 		axisLabels.put(""+prefixPossibilities.indexOf(axis.charAt(0)), getSeparatedList(labels, '|'));
 
 		final StringBuilder builder = new StringBuilder();

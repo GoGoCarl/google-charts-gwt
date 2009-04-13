@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -24,6 +24,9 @@ package com.solertium.util.gwt.charts.client;
 
 /**
  * ShapeMarker.java
+ * 
+ * Implementation of markers.  You can add a number of 
+ * shapes provided by Google as well as text markers.
  *
  * @author carl.scott
  *

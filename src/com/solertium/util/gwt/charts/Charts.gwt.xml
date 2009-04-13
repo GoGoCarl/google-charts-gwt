@@ -1,3 +1,4 @@
+<!-- Google Charts for GWT -->
 <module>
 	<source path='client'/>
 </module>

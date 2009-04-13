@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -24,26 +24,38 @@ package com.solertium.util.gwt.charts.client;
 
 import com.solertium.util.gwt.charts.client.fill.BackgroundFill;
 
-
-
 /**
  * PieChart.java
+ * 
+ * Implementation of a pie chart.
  *
- * @author carl.scott
+ * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+ *  href="http://www.solertium.com">Solertium Corporation</a>
  *
  */
 public class PieChart extends BaseChart {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Default constructor
+	 */
 	public PieChart() {
 		this(false);
 	}
 
+	/**
+	 * Constructor with option to make this chart 3D
+	 * @param is3d true for 3d, false otherwise
+	 */
 	public PieChart(boolean is3d) {
 		super(is3d ? "p3" : "p");
 	}
 
+	/**
+	 * Use this to set this chart at an angle.
+	 * @param angleInRadians
+	 */
 	public void setOrientation(int angleInRadians) {
 		put("chp", Integer.toString(angleInRadians));
 	}
