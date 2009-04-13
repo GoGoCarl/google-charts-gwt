@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007-2008 Solertium Corporation
+ * Copyright (C) 2007-2009 Solertium Corporation
  *
  * This file is part of the open source GoGoEgo project.
  *
@@ -38,7 +38,8 @@ import com.google.gwt.user.client.ui.Image;
  * This class also provides a means of setting global
  * variables.
  *
- * @author carl.scott
+ * @author <a href="mailto:carl.scott@solertium.com">Carl Scott</a>, <a
+ *  href="http://www.solertium.com">Solertium Corporation</a>
  *
  */
 public abstract class BaseChart extends HashMap<String, String> {
@@ -74,6 +75,11 @@ public abstract class BaseChart extends HashMap<String, String> {
 		put("chs", width + "x" + height);
 	}
 
+	/**
+	 * The title of the chart.  Each variable you supply 
+	 * will constitute a new line. 
+	 * @param titleLines
+	 */
 	public void setTitle(String... titleLines) {
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < titleLines.length; i++) {
@@ -116,10 +122,8 @@ public abstract class BaseChart extends HashMap<String, String> {
 	}
 
 	public String generate() {
-		if (chartData == null) {
-			System.out.println("Please specify chart data.");
-			return null;
-		}
+		if (chartData == null)
+			return "";
 
 		put("chd", chartData.getEncodedData());
 
@@ -137,6 +141,11 @@ public abstract class BaseChart extends HashMap<String, String> {
 		return "http://chart.apis.google.com/chart?" + builder.toString();
 	}
 
+	/**
+	 * This is the only GWT dependency in this project.  Should 
+	 * it be removed??
+	 * @return
+	 */
 	public Image generateWidget() {
 		return new Image(generate());
 	}
