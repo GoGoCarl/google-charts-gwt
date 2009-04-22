@@ -6,6 +6,7 @@
 	
 	<!-- Google Charts for GWT -->
 	<inherits name='com.solertium.util.gwt.charts.Charts' />
+	<inherits name='com.googlecode.charts4j' />
 	
 	<source path='example'/>
 	

@@ -50,6 +50,8 @@ public class ExampleEntryPoint implements EntryPoint {
 	private final BaseExample advancedPie;
 	private final BaseExample bar;
 	private final BaseExample line;
+	private final BaseExample charts4JBar;
+	private final BaseExample charts4JPie;
 	
 	private final SimplePanel content;
 	private final HTML description;
@@ -63,6 +65,8 @@ public class ExampleEntryPoint implements EntryPoint {
 		advancedPie = new AdvancedPieChartExample(); 
 		bar = new BarChartExample();
 		line = new LineChartExample();
+		charts4JBar = new Charts4JBarChartExample();
+		charts4JPie = new Charts4JPieChartExample();
 		
 		current = null;
 		
@@ -103,6 +107,16 @@ public class ExampleEntryPoint implements EntryPoint {
 		buttonPanel.add(new Button("Line Chart", new ClickListener() {
 			public void onClick(Widget sender) {
 				showChart(line);
+			}
+		}));
+		buttonPanel.add(new Button("Charts4J Bar", new ClickListener() {
+			public void onClick(Widget sender) {
+				showChart(charts4JBar);
+			}
+		}));
+		buttonPanel.add(new Button("Charts4J Pie", new ClickListener() {
+			public void onClick(Widget sender) {
+				showChart(charts4JPie);
 			}
 		}));
 		

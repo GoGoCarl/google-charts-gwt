@@ -24,6 +24,7 @@ package com.solertium.util.gwt.charts.example;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.google.gwt.user.client.ui.Image;
 import com.solertium.util.gwt.charts.client.ChartData;
@@ -45,8 +46,8 @@ public abstract class BaseExample {
 	
 	public abstract String getSource();
 	
-	protected Collection<Double> getSampleDataSet() {
-		final Collection<Double> sampleData = new ArrayList<Double>();
+	protected List<Double> getSampleDataSet() {
+		final List<Double> sampleData = new ArrayList<Double>();
 		sampleData.add(Double.valueOf(10));
 		sampleData.add(Double.valueOf(20));
 		sampleData.add(Double.valueOf(50));
