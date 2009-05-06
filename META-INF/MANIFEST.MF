@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Charts Plug-in
+Bundle-Name: GWT Charts
 Bundle-SymbolicName: com.solertium.util.gwt.charts
 Bundle-Version: 1.0.0
-Bundle-Vendor: SOLERTIUM
+Bundle-Vendor: Solertium
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: com.google.gwt;bundle-version="1.5.2"
 Export-Package: com.solertium.util.gwt.charts.client,
