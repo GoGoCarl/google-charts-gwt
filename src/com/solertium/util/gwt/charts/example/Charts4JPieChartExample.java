@@ -46,9 +46,11 @@ public class Charts4JPieChartExample extends SimplePieChartExample {
 	
 	@Override
 	public Image getChart() {
+		/*
 		final String[] sampleNames = new String[] {
 			"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 		};
+		*/
 		final Color[] sampleColors = new Color[] {
 			Color.RED, Color.BLUE,  Color.GREEN, Color.YELLOW, Color.BLACK
 		};
@@ -61,7 +63,7 @@ public class Charts4JPieChartExample extends SimplePieChartExample {
 		
 		for (int i = 0; i < dataSet.size(); i++) {
 			int normalizedPercentage = (int)((dataSet.get(i) / total) * 100);
-			slices.add(Slice.newSlice(normalizedPercentage, sampleColors[i]));
+			slices.add(Slice.newSlice(normalizedPercentage, sampleColors[i],"",""));
 		}
 		
 		final PieChart chart = GCharts.newPieChart(slices);
