@@ -74,6 +74,12 @@ public class ChartData {
 	}
 
 	public String getEncodedData() {
+		double maxValue = 0;
+		for (ChartDataStruct struct : data) {
+			double max = getMaxValue(struct.data);
+			if (max > maxValue)
+				maxValue = max;
+		}
 		final StringBuilder builder = new StringBuilder();
 		builder.append("s:");
 		for (Iterator<ChartDataStruct> keyIter = data.listIterator(); keyIter.hasNext(); ) {
@@ -81,7 +87,7 @@ public class ChartData {
 			final StringBuilder csv = new StringBuilder();
 			for (Iterator<Double> iter = current.iterator(); iter.hasNext(); )
 				csv.append(iter.next() + (iter.hasNext() ? "," : ""));
-			builder.append(_encode(csv.toString(), getMaxValue(current).toString()));
+			builder.append(_encode(csv.toString(), Double.toString(maxValue)));
 			if (keyIter.hasNext())
 				builder.append(',');
 		}
@@ -160,6 +166,10 @@ public class ChartData {
   		}
 		return chartData.join('');
 	}-*/;
+	
+	public int size() {
+		return data.size();
+	}
 
 	/**
 	 * ChartDataExtras
