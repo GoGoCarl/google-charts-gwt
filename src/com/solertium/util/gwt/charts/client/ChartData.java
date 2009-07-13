@@ -111,12 +111,14 @@ public class ChartData {
 
 	public String getLegendNames() {
 		final StringBuilder builder = new StringBuilder();
+		boolean first = true;
 		for (Iterator<ChartDataStruct> iter = data.listIterator(); iter.hasNext(); ) {
 			String name = iter.next().extras.getLegendNames();
 			if (name != null) {
-				builder.append(name);
-				if (iter.hasNext())
+				if (!first)
 					builder.append('|');
+				builder.append(name);
+				first = false;
 			}
 		}
 		final String out = builder.toString();
@@ -125,12 +127,13 @@ public class ChartData {
 
 	public String getLegendColors() {
 		final StringBuilder builder = new StringBuilder();
+		boolean first = true;
 		for (Iterator<ChartDataStruct> iter = data.listIterator(); iter.hasNext(); ) {
 			String color = iter.next().extras.getLegendColors();
 			if (color != null) {
-				builder.append(color);
-				if (iter.hasNext())
+				if(!first)
 					builder.append(',');
+				builder.append(color);
 			}
 		}
 		final String out = builder.toString();

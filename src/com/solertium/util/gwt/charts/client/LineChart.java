@@ -38,6 +38,7 @@ public class LineChart extends AxisChart {
 
 	public static final String PLOT_X_AXIS_WITH_LINES = "c";
 	public static final String PLOT_X_AXIS_WITHOUT_LINES = "s";
+	public static final String PLOT_XY = "xy";
 
 	private static final long serialVersionUID = 1L;
 
